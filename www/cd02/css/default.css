@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* reset */
+body,h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd { margin:0; padding:0; }
+ul { list-style:none; }
+img { border:0; vertical-align:top; }
+
+/* base */
+body { font-family:"나눔고딕"; font-size:12px; color:#767676; }
+.skip_navigation a { position:absolute; left:0px; top:-9999px; background:red; color:white; font-size:20px; }
+.skip_navigation a:focus { top:0px; }
+.blind { position:absolute; left:0px; top:-9999px; }
+
+/* layout */
+#header { /*height:114px; background-color:hotpink; */
+	background-image:url(../images/header_bg.gif);
+	background-repeat:repeat-x;
+}
+#header .inner { position:relative; margin:0 auto; width:990px; height:114px; /*border:1px dashed skyblue;*/ }
+
+#visual { height:534px; margin-top:42px; 
+	background-image:url(../images/visual_bg.jpg);
+	background-repeat:no-repeat;
+	background-position:center top; /*수평 수직*/
+}
+#visual .inner { position:relative; margin:0 auto; width:990px; height:534px; /*border:2px dashed blue;*/ }
+
+#contents { margin:0 auto; margin-top:10px; margin-bottom:40px; width:990px; height:490px; /*background-color:skyblue;*/ }
+
+#footer { /*height:150px;*/ background-color:black; }
+#footer .inner { margin:0 auto; width:990px; height:150px; /*border:1px dashed orange;*/}
+
+/* header */
+h1 { width:95px; height:95px; /*background-color:blue;*/ }
+.gnb { position:absolute; right:0px; bottom:26px; /*width:645px;*/ height:11px; /*background-color:green;*/ }
+.gnb li { float:left; margin-left:79px; }
+
+.top_gnb { position:absolute; right:0px; top:30px; /*width:127px;*/ height:22px; /*background-color:yellow;*/ }
+.top_gnb li { float:left; margin-left:15px; }
+
+/* visual */
+#visual .typo { position:absolute; left:474px; top:282px; }
+
+
+
+/* contents */
+.group1 { margin-bottom:10px; /*border:2px dashed yellow;*/ }
+.group1:after { content:""; display:block; clear:both; }
+.group1 li { float:left; margin-right:10px; }
+.group1 li.b4 { margin-right:0; }
+
+.group2 { /*border:2px solid red;*/ } 
+.group2:after { content:""; display:block; clear:both; }
+.group2 .banner1 { float:left; margin-right:10px; /*background-color:orange;*/ }
+.group2 .banner2 { float:left; margin-right:10px; /*background-color:blue;*/ }
+.group2 .banner3 { float:left; /*background-color:grey;*/ }
+
+
+
+/* footer */
+p.address { padding-top:39px; }
+/* CSS Document */
+

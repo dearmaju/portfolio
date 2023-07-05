@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>루이까또즈</title>
+    <style>
+/* reset */
+html,body { height:100%; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,button,input { margin:0; padding:0; }
+body,h1,h2,h3,h4,input,button { font-size:12px; }
+ul,li,ol { list-style:none; }
+img,fieldset,iframe { border:0; }
+img { vertical-align:top; }
+table { border-collapse:collapse; }
+    
+/* base */ 
+body { font:11px/17px Roboto, "돋움"; color:#888; }
+a { text-decoration:none; color:#888; }
+a:hover { color:darkgoldenrod; }
+.skip_navigation { position:absolute; top:-99999px; }
+.blind { position:absolute; top:-99999px; }
+
+/* layout*/
+#header { height:115px; background:url(images/bg_header.gif); }
+#header .inner { position:relative; margin:0 auto; width:939px; height:115px; }
+#visual { height:565px; margin-bottom:55px; background:no-repeat center top url(images/main_visual.jpg); }
+#contents { margin:0 auto; width:939px; height:620px; margin-bottom:50px; }
+#footer { height:48px; background:url(images/bg_footer.gif); }
+#footer .inner { margin:0 auto; width:939px; height:48px; }
+
+/* header */
+h1 { position:absolute; left:339px; top:22px; width:263px; height:35px; }
+.gnb { transition:0.5s; overflow:hidden; position:absolute; z-index:10; left:0px; top:80px; width:939px; height:35px; }
+.gnb:hover { height:152px; }
+.gnb .main { float:left; width:192px; padding-top:12px; }
+.gnb .main:first-child { padding-left:132px; }
+.gnb > ul { position:relative; z-index:10; }
+.gnb .lnb_bg { position:absolute; z-index:1; left:0px; top:35px; 
+width:100%; height:117px; background:white; }
+.gnb .main .lnb { padding-top:35px; }
+.gnb .main .lnb li { height:25px; }
+
+#header .inner .location { 
+	position:absolute; z-index:20; right:7px; top:52px; 
+	width:104px; 
+	padding-left:6px;
+	font:9px/17px Roboto; color:#adb9c0; letter-spacing:1px;
+	background:white url(images/arrow.gif) no-repeat right top; } 
+	
+#header .inner .location .sub { display:none; }
+#header .inner .location:hover .sub { display:block; }
+#header .inner .location:hover { background-image:url(images/arrow_over.gif); }
+	
+/* contents */
+#contents .link { height:300px; margin-bottom:20px; }
+#contents .link .collection { float:left; width:299px; height:300px; margin-right:20px; }
+#contents .link .campaign { float:left; width:300px; height:300px; margin-right:20px; }
+#contents .link .story { float:left; width:300px; height:300px; }
+
+#contents .social { float:left; width:619px; height:300px; margin-right:20px; background-color:#cad6d7; }
+#contents .social h2 { height:15px; text-align:center; margin-top:24px; margin-bottom:25px; }
+#contents .social .youtube { float:left; width:354px; height:210px; margin-left:24px; margin-right:17px; }
+#contents .social .youtube iframe { border:0; }
+#contents .social .facebook { float:left; width:179px; height:78px; padding:10px; margin-bottom:14px; 
+ background:url(images/social_facebook_bg.gif); }
+#contents .social .blog { float:left; width:179px; height:78px; padding:10px; 
+background:url(images/social_blog_bg.gif); }
+
+#contents .banner { float:left; width:300px; height:300px; }
+#contents .banner .b1 { width:300px; height:140px; margin-bottom:20px; }
+#contents .banner .b2 { width:300px; height:140px; }
+
+/* footer */
+#footer .inner p { text-align:center; padding-top:21px; }
+    
+</style>
+</head>
+
+<body>
+<div class="skip_navigation">
+	<a href="#contents">본문바로가기</a>
+</div>
+
+
+<div id="header">
+	<div class="inner">
+    	<h1><a href="#"><img src="images/logo.gif" alt="루이까또즈"></a></h1>
+        
+        <h2 class="blind">주요메뉴</h2>
+        
+        <div class="gnb">
+        <ul>
+          <li class="main"><a href="#"><img src="images/gnb_brand.gif" alt="brand"></a>
+          	<ul class="lnb">
+          	  <li><a href="#">NEWS</a></li>
+          	  <li><a href="#">LOUISien</a></li>
+          	  <li><a href="#">INSTAGRAM</a></li>
+          	</ul> 
+         </li>
+          
+          
+          <li class="main"><a href="#"><img src="images/gnb_collection.gif" alt="collection"></a>
+          	<ul class="lnb">
+            	<li><a href="#">RUNWAY LOOKS</a></li>
+          	  <li><a href="#">CAMPAIGN</a></li>
+          	  <li><a href="#">PRODUCT</a></li>
+          	</ul>
+          </li>
+          
+          <li class="main"><a href="#"><img src="images/gnb_world.gif" alt="world"></a>
+          	<ul class="lnb">
+            	<li><a href="#">GALLERY</a></li>
+          	  <li><a href="#">STUDIO</a></li>
+          	  <li><a href="#">ATRIUM</a></li>
+          	</ul>
+          </li>
+          
+          
+          
+          <li class="main"><a href="#"><img src="images/gnb_stores.gif" alt="stores"></a>
+          	<ul class="lnb">
+          		<li><a href="#">LOCATION</a></li>
+          	  <li><a href="#">SPECIAL STORES</a></li>
+          	  <li><a href="#">ONLINE STORES</a></li>
+          	</ul>
+          </li>
+          
+        </ul>
+        
+        <div class="lnb_bg"></div>
+        
+        </div>
+    
+    <div class="location">LOCATION
+    <ul class="sub">
+      <li><a href="#">FRANCE</a></li>
+      <li><a href="#">CHINA</a></li>
+    </ul>
+    
+    </div>
+    </div>
+</div>
+
+
+<div id="visual"></div>
+
+
+ <div id="contents">
+	<div class="link">
+     <h2 class="blind">주요페이지 링크</h2>
+    	<div class="collection"><a href="#"><img src="images/link_collection.jpg" alt="F/W 2018 Collection"></a></div>
+        <div class="campaign"><a href="#"><img src="images/link_campaign.jpg" alt="3nd Part of My Bag in Paris"></a></div>
+        <div class="story"><a href="#"><img src="images/link_story.jpg" alt="Season Story"></a></div>
+ </div>
+
+ <div class="social">
+ 	<h2><img src="images/social_title.gif" alt="Social Media"></h2>
+    <div class="youtube"><iframe title="루이까또즈 2018 F/W 캠페인 영상" width="354" height="210"
+    	src="https://www.youtube.com/embed/DlaEB9iOFws" 
+        frameborder="0" allowfullscreen></iframe></div>
+        
+    <div class="facebook">
+    <p><a href="#">&lt;파이어 바이블(Fire Bible)&gt;로 감각적인 ...</br>
+    2020-05-03</a></p>
+    </div>
+    
+    <div class="blog">
+    <p><a href="#">[어버이날 선물/스승의 날 선물] 소중한 분들께 감..</br>
+    2020-05-03</a></p>
+     </div>
+     
+ </div>
+
+ <div class="banner">
+  <h2 class="blind">배너</h2>
+ 	<div class="b1"><a href="#"><img src="images/banner_milestones.jpg" alt="Milestones"></a></div>
+    <div class="b2"><a href="#"><img src="images/banner_online_offer.jpg" alt="Online Offer, 온라인 스토어 루이까또즈 직영몰" /></a></div>
+ </div>
+</div>
+
+
+<div id="footer">
+	<div class="inner">
+    <h2 class="blind">저작권정보</h2>
+    	<p><img src="images/copyright.gif" alt="Since 1980. Copyright 20181, Louis Quatorze, All right reserved." /></p>
+    </div>
+</div>
+	
+</body>
+</html>

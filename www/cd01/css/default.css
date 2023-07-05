@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+/* CSS Document */
+/* reset */
+html,body { height:100%; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,button,input { margin:0; padding:0; }
+body,h1,h2,h3,h4,input,button { font-size:12px; }
+ul,li,ol { list-style:none; }
+img,fieldset,iframe { border:0; }
+img { vertical-align:top; }
+table { border-collapse:collapse; }
+
+
+/* base */
+body { font:11px/17px Roboto, "돋움"; color:#888; }
+a { text-decoration:none; color:#888; }
+a:hover { color:darkgoldenrod; }
+.skip_navigation { position:absolute; top:-99999px; }
+.blind { position:absolute; top:-99999px; }
+
+
+/* layout */
+#header { height:115px; background:url(../images/bg_header.gif); }
+#header .inner { position:relative; margin:0 auto; width:939px; height:115px; }
+#visual { height:565px; margin-bottom:55px; background:no-repeat center top url(../images/main_visual.jpg); }
+#contents { margin:0 auto; width:939px; height:620px; margin-bottom:50px; }
+#footer { height:48px; background:url(../images/bg_footer.gif); }
+#footer .inner { margin:0 auto; width:939px; height:48px; }
+
+
+/* header */
+#header .inner h1 { position:absolute; left:339px; top:22px; width:263px; height:35px; }
+#header .inner .gnb { transition:0.5s; overflow:hidden; position:absolute; z-index:10; left:0px; top:80px; width:939px; height:152px; /*border:1px solid red;*/ }
+#header .inner .gnb .main { /*position:relative;*/ float:left; width:192px; padding-top:12px; /*border:2px solid blue;*/ }
+#header .inner .gnb .main:first-child { padding-left:132px; /*border:2px dashed red;*/ }
+.gnb .main .lnb { padding-top:26px; font-size:12px color:#9b9d9e; line-height:24px; /*border:2px solid yellow;*/  }
+.gnb .main .lnb li a { color:#9b9d9e; }
+.gnb .main .lnb li a:hover { color:white; background:#adb9c0; }
+
+.gnb .lnb_bg { position:absolute; left:0px; top:35px; z-index:-10;
+width:939px; height:117px; background:white; 
+} 
+
+#header .inner .location {/* border:1px dashed pink;*/
+	position:absolute; z-index:20; right:7px; top:52px; 
+	width:104px; height:17px; overflow:hidden; /*안보이게하는 설정*/ transition:0.3s;
+	padding-left: 6px;
+	font: 9px/17px Roboto; color:#adb9c0; letter-spacing:1px; 
+	background:#fff url(../images/arrow.gif) no-repeat right top; 
+}
+
+#header .inner .location:hover { 
+	height:51px;/*보이게하는 설정*/ background-image:url(../images/arrow_over.gif); } 
+		
+
+/* contents */
+#contents .link { height:300px; margin-bottom:20px; }
+#contents .link .collection { float:left; width:299px; height:300px; margin-right:20px; }
+#contents .link .campaign { float:left; width:300px; height:300px; margin-right:20px; }
+#contents .link .story { float:left; width:300px; height:300px; }
+
+#contents .social { float:left; width:619px; height:300px; margin-right:20px; background-color:#cad6d7; }
+#contents .social h2 { height:15px; text-align:center; margin-top:24px; margin-bottom:25px; }
+#contents .social .youtube { float:left; width:354px; height:210px; margin-left:24px; margin-right:17px; }
+#contents .social .youtube iframe { border:0; }
+#contents .social .facebook { float:left; width:179px; height:78px; padding:10px; margin-bottom:14px; background:url(../images/social_facebook_bg.gif); }
+#contents .social .blog { float:left; width:179px; height:78px; padding:10px; background:url(../images/social_blog_bg.gif); }
+
+#contents .banner { float:left; width:300px; height:300px; }
+#contents .banner .b1 { width:300px; height:140px; margin-bottom:20px;  }
+#contents .banner .b2 { width:300px; height:140px; }
+
+
+/* footer */
+#footer .inner p { text-align:center; padding-top:21px; }
+

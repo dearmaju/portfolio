@@ -1,0 +1,542 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>my portfolio</title>
+<link href="https://fonts.googleapis.com/css?family=Spartan:100,300,400,600,700,800,900&display=swap" rel="stylesheet">
+<style>
+/* reset */
+html,body { width:100%; height:100%; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,button,input,legend { margin:0; padding:0; }
+body,h1,h2,h3,h4,input,button { font-size:12px; }
+ul,li,ol { list-style:none; }
+img,fieldset,iframe { border:0; }
+img { vertical-align:top; }
+table { border-collapse:collapse; }
+
+/* base */
+body { font:12px "Spartan","나눔고딕","Nanum Gothic", "맑은 고딕"; overflow-x:hidden;/*가로스크롤없앰*/ }
+a { text-decoration:none; color:#767676; }
+.skip_nav a { position:absolute; top:-9999px; font-size:0;}
+.skip_nav a:focus { position:absolute; left:0px; top:0px; z-index:1000; padding:5px; font-size:15px; background-color:#0099ff; }
+.blind { position:absolute; top:-9999px; font-size:0;}
+.clearfix:after { content:""; display:block; clear:both; }
+
+
+/* layout */
+#header { /*position:fixed; left:0px; top:0px; z-index:100;*/ width:100%; /*border:1px dashed #ccc;*/ }
+#header .inner { position:relative; margin:0 auto; width:1200px; height:204px; /*border:1px dashed #ccc;*/ }
+
+
+#contents1 .inner { position:relative; margin:0 auto; width:1200px; height:1300px;  padding-bottom:400px; /*border:1px dashed #ccc;*/}
+
+#container { margin:0 auto; width:1200px; height:1300px; }
+
+#contents3 .inner { position:relative; margin:0 auto; width:1200px; height:1000px;  padding-bottom:400px; /*border:1px dashed #ccc;*/}
+
+#footer { /*border:1px dashed #ccc;*/ }
+#footer .inner { position:relative; margin:0 auto; width:1200px; height:110px; /*border:1px dashed #ccc;*/ }
+
+
+/* header */
+#header h1 { position:absolute; left:0px; top:0px; }
+#header #gnb { position:fixed; z-index:1000; left:50%; margin-left:610px; top:315px; }
+#header #gnb li { /*float:left;*/ margin-bottom:37px; }
+
+
+
+/* main */
+
+#contents1 h2 { position:relative; left:0; top:10px; opacity:0; padding-top:250px; }
+#contents1 .inner .typo1 { opacity:0; position:absolute; z-index:-10; left:50%; margin-left:-960px; top:10px; }
+
+
+
+/* portfolio */
+#container { width:1200px; margin:0 auto; /*border:3px dashed #f93;*/ }
+#container h2 { text-align:center; padding-bottom:150px; }
+
+#container .box { width:220px; height:220px; margin:10px; background:#ccc; }
+#container .box.b4 { width:460px; height:460px; }
+#container .box.b6 { width:460px; height:220px; }
+
+#container .box .over { transition:1s; opacity:0; position:absolute;left:0; top:0; width:220px; height:220px; background:rgba(0,0,0,0.5); font-size:20px; color:white; }
+#container .box .over:hover { opacity:1; }
+#container .box .over .t1 { position:relative; left:20px; top:0px; padding-top:20px; padding-bottom:90px; }
+
+#container .box .over1 { transition:1s; opacity:0; position:absolute;left:0; top:0; width:460px; height:460px; background:rgba(0,0,0,0.5);  font-size:20px; color:white; }
+#container .box .over1:hover { opacity:1;}
+#container .box .over1 .t1 { position:relative; left:20px; top:0px; padding-top:20px; padding-bottom:200px; }
+
+#container .box .over2 { transition:1s; opacity:0; position:absolute;left:0; top:0; width:460px; height:220px; background:rgba(0,0,0,0.5);  font-size:20px; color:white; }
+#container .box .over2:hover { opacity:1;}
+#container .box .over2 .t1 { position:relative; left:20px; top:0px; padding-top:20px; padding-bottom:90px; }
+
+/* about */
+#contents3 { position:relative; }
+#contents3 h2 { padding-top:577px; }
+#contents3 .inner .typo2 { opacity:0; position:absolute; z-index:-10; left:50%; margin-left:-960px; top:-100px; }
+/*#contents3 .inner .a1 { position:absolute; left:0px; top:1170px; }*/
+#contents3 .inner p { position:absolute; left:0px; top:1170px; }
+
+#contents3 .inner .more { position:absolute; left:233px; top:900px; background:black; color:white; padding:10px 15px; }
+
+
+
+/* footer */
+#footer .copyright { text-align:center; font-size:10px; }
+
+
+/* 팝업 박스 */
+.pop { 
+	display:none; 
+	position:fixed; 
+	left:0px; top:0px;
+	width:100%; height:100%; 
+	background:rgba(0,0,0,0.7); 
+	z-index:1000;
+	overflow:auto;
+}
+
+.close { position:fixed; right:30px; top:30px; }
+
+/* 포트폴리오 1 */
+.p1 { background:url(images/pf01_bg.jpg) no-repeat center top fixed; } 
+.c1 {  background:url(images/pf01_typo.png) no-repeat center top; width:100%; height:1000px; color:#767676; /*border:3px dashed orange;*/ box-sizing:border-box; }
+.c1s { position:relative; background:url(images/pf01.jpg) no-repeat center top; width:100%; height:7500px; color:#767676; /*border:3px dashed blue;*/ 
+box-sizing:border-box; }
+.c1s .link { position:absolute; left:50%; margin-left:80px; top:1043px; width:300px; height:54px; /*border:3px dashed green;*/ }
+.c1s .slide { overflow:hidden; position:absolute; left:50%; margin-left:-441px; top:1393px; width:879px; height:495px; background:blue; /*border:1px dashed pink;*/ }
+.c1s .slide img { transition:10s; position:absolute; left:0; top:0; }
+.c1s .slide:hover img { top:-3743px; }
+
+/*포트폴리오 2*/
+/*.p2 { background:url(images/pf03_bg.jpg) no-repeat center top fixed; } 
+.c3 {  background:url(images/pf03_typo.png) no-repeat center top; width:100%; height:1000px; color:#767676; border:3px dashed orange; box-sizing:border-box; }*/
+.c2s { position:relative; background:url(images/pf02.jpg) no-repeat center top; width:100%; height:1800px; color:#767676; /*border:3px dashed blue;*/
+box-sizing:border-box; }
+
+/* 포트폴리오 3 */
+.p3 { background:url(images/pf03_bg.jpg) no-repeat center top fixed; } 
+.c3 {  background:url(images/pf03_typo.png) no-repeat center top; width:100%; height:1000px; color:#767676; /*border:3px dashed orange;*/ box-sizing:border-box; }
+.c3s { position:relative; background:url(images/pf03.jpg) no-repeat center top; width:100%; height:4085px; color:#767676; /*border:3px dashed blue;*/ 
+box-sizing:border-box; }
+/*.c4s .link { position:absolute; left:50%; margin-left:80px; top:1043px; width:300px; height:54px; border:3px dashed green; } */
+.c3s .slide { overflow:hidden; position:absolute; left:50%; margin-left:-447px; top:1012px; width:349px; height:618px; background:blue; /*border:1px dashed pink;*/ }
+.c3s .slide img { transition:10s; position:absolute; left:0; top:0; }
+.c3s .slide:hover img { top:-793px; }
+
+.c3s .slide1 { overflow:hidden; position:absolute; left:50%; margin-left:98px; top:1012px; width:348px; height:618px; background:blue; /*border:1px dashed pink;*/ }
+.c3s .slide1 img { transition:10s; position:absolute; left:0; top:0; }
+.c3s .slide1:hover img { top:-1065px; }
+
+/* 포트폴리오 4 */
+.p4 { background:url(images/pf04_bg.jpg) no-repeat center top fixed; } 
+.c4 {  background:url(images/pf04_typo.png) no-repeat center top; width:100%; height:1000px; color:#767676; /*border:3px dashed orange;*/ box-sizing:border-box; }
+.c4s { position:relative; background:url(images/pf04.jpg) no-repeat center top; width:100%; height:6500px; color:#767676; /*border:3px dashed blue;*/ 
+box-sizing:border-box; }
+.c4s .link { position:absolute; left:50%; margin-left:80px; top:1043px; width:300px; height:54px; /*border:3px dashed green;*/ }
+.c4s .slide { overflow:hidden; position:absolute; left:50%; margin-left:-440px; top:1393px; width:876px; height:491px; background:blue; /*border:1px dashed pink;*/ }
+.c4s .slide img { transition:10s; position:absolute; left:0; top:0; }
+.c4s .slide:hover img { top:-2840px; }
+
+/* 포트폴리오 5 */
+.p5 { background:url(images/pf05_bg.jpg) no-repeat center top fixed; } 
+.c5 {  background:url(images/pf05_typo.png) no-repeat center top; width:100%; height:1000px; color:#767676; /*border:3px dashed orange; */box-sizing:border-box; }
+.c5s { position:relative; background:url(images/pf05.jpg) no-repeat center top; width:100%; height:4335px; color:#767676; /*border:3px dashed blue;*/ 
+box-sizing:border-box; }
+/*.c4s .link { position:absolute; left:50%; margin-left:80px; top:1043px; width:300px; height:54px; border:3px dashed green; } */
+.c5s .slide { overflow:hidden; position:absolute; left:50%; margin-left:-447px; top:1012px; width:350px; height:618px; background:blue; /*border:1px dashed pink;*/ }
+.c5s .slide img { transition:10s; position:absolute; left:0; top:0; }
+.c5s .slide:hover img { top:-1330px; }
+
+.c5s .slide1 { overflow:hidden; position:absolute; left:50%; margin-left:98px; top:1004px; width:351px; height:626px; background:blue; /*border:1px dashed pink;*/ }
+.c5s .slide1 img { transition:10s; position:absolute; left:0; top:0; }
+.c5s .slide1:hover img { top:-1185px; }
+
+
+/* 포트폴리오 6 */
+.p6 { background:url(images/pf06_bg.jpg) no-repeat center top fixed; } 
+.c6 {  background:/*url(images/pf06_typo.png) no-repeat center top;*/ width:100%; height:1000px; color:#767676; /*border:3px dashed orange;*/ box-sizing:border-box; }
+.c6s { position:relative; background:url(images/pf06.jpg) no-repeat center top; width:100%; height:5898px; color:#767676; /*border:3px dashed blue;*/ 
+box-sizing:border-box; }
+
+/* 포트폴리오 7 */
+.p7 { background:url(images/pf07_bg.jpg) no-repeat center top fixed; } 
+.c7 {  background:url(images/pf07_typo.png) no-repeat center top; width:100%; height:1000px; color:#767676; /*border:3px dashed orange;*/ box-sizing:border-box; }
+.c7s { position:relative; background:url(images/pf07.jpg) no-repeat center top; width:100%; height:2920px; color:#767676; /*border:3px dashed blue;*/ 
+box-sizing:border-box; }
+.c7s .link { position:absolute; left:50%; margin-left:-450px; top:663px; width:290px; height:52px; /*border:3px dashed green;*/ }
+
+</style>
+<!--[if lte IE 8]>
+<script type="text/javascript" src="js/modernizr.custom.js"></script>
+<script type="text/javascript" src="js/prefixfree.min.js"></script>
+<![endif]-->
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+
+<script type="text/javascript">
+$(function(){
+
+
+			/////// 메뉴 클릭시 스크롤이동 효과
+			var scrollSpeed = 1000; //속도(1000=1초)
+			var esm = "easeInOutQuint" //easing설정
+			$("#gnb a, h1 a").click(function(){
+				var target = $($(this).attr("href")).offset().top
+				$("html,body").animate({scrollTop:target},scrollSpeed,esm);
+				return false;
+			});
+
+
+			////스크롤하기전 설정
+			$("#contents1 h2").animate({opacity:1,top:0},1000);
+
+
+			//스크롤할때(스크롤하는동안) 설정
+			$(window).scroll(function(){ 
+
+					var b = $(document).scrollTop();//스크롤범위값(얼마만큼 스크롤했느냐)			
+					$("#tt").text(b);
+
+
+
+					if (b>0){
+							//$("#contents1 h2").animate({opacity:1,top:0},1000);
+					}					
+					
+					
+					if (b>250){
+							$(".typo1").animate({opacity:1,top:0},1000);
+					}
+
+
+
+					if (b>2600){
+							$(".typo2").animate({opacity:1,top:0},1000);
+					}
+
+			});
+
+
+
+
+
+			///////////////// 포트폴리오 상세페이지 팝업
+
+			  $('.menu').click(function(){//각 메뉴를 클릭했을때
+				  $(this).next().show();	  //이 다음 형제인  .pop을 보이게함
+				  $('body').css({overflowY:"hidden"});//body세로스크롤없앰
+				  return false;
+			  });
+			  
+			  
+			  
+			  $('.close').click(function(){//close눌렀을때
+				  $('.pop').hide(); //.pop을 안보이게함
+				  $('body').css({overflowY:"auto"});//body세로스크롤생김
+				  return false;
+			  });
+
+
+
+});
+</script>
+
+
+<script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
+<script type="text/javascript" >
+$(function(){
+
+   $("#portfolio").masonry({
+      itemSelector:'.box',
+	  columnWidth:0
+   });
+
+});
+</script>
+
+</head>
+
+<body>
+	<!-- <div id="tt" style="position:fixed; left:0px; top:200px; z-index:1000; font-size:30px; background:red; color:white;">0</div> -->
+
+	<div class="skip_nav">
+		<a href="#contents_sub1">본문 바로가기</a>
+	</div>
+
+
+
+
+
+      <div id="header"> <!-- 헤더 시작  -->
+         <div class="inner">
+         
+            <h1><a href="#visual"><img src="images/logo.jpg" alt="portfolio"></a></h1>
+            
+            <div id="gnb">
+                <ul>
+                    <li><a href="#contents1"><img src="images/gnb1.png" alt="home"></a></li>
+                 	<li><a href="#container"><img src="images/gnb2.png" alt="Portfolio"></a></li>
+                    <li><a href="#contents3"><img src="images/gnb3.png" alt="About"></a></li>
+                </ul>
+            </div>
+            
+         </div>
+      </div> 
+      
+      
+      
+
+	  
+     
+      
+            
+      <div id="contents1"> <!-- 컨텐츠 sub1 시작 -->
+	     <div class="inner clearfix">
+
+              <h2><img src="images/c1_title.jpg" alt="Sara Web Design"></h2>
+
+				<div class="typo1"><img src="images/c1_bg.jpg" alt=""></div>
+
+		</div>
+      </div>
+      
+      
+  
+  
+  
+      <div id="container"> <!-- 컨텐츠 sub2 시작 -->
+      
+        <h2><img src="images/c2_title.jpg" alt="Portfolio"></h2>
+        
+	  <div class="inner" id="portfolio">   
+			
+
+	 <div class="box">
+           	<img src="image01jpg/01.jpg" alt="Seoul arts center">
+
+        	<a href="#" class="over menu">
+				<p class="t1">SEOUL ARTS</br>CENTER</p>
+				<p class="t1">SITE DESIGN</p>
+            </a>
+
+			  <div class="pop p1">
+					  <div class="c1"></div>
+
+					  <div class="c1s">
+						  <a href="pf01/index.html" target="_blank" class="link"></a>
+						  <div class="slide"><img src="images/pf01_slide.png" alt=""></div>
+					  </div>
+
+					  <a href="#" class="close"><img src="images/closeblack.png" alt=""></a>
+			  </div>  
+
+     </div>
+     
+     
+      <div class="box">
+      		<img src="image01jpg/02.jpg" alt="ALAIN">
+        	<a href="#" class="over menu">
+            <p class="t1">ALAIN</p>
+            <p class="t1">EVENT DESIGN</p>
+            </a>
+
+			  <div class="pop p2">
+					  <div class="c2"></div>
+
+					  <div class="c2s">
+						  <a href="pf02/index.html" target="_blank" class="link"></a>
+						  <!--<div class="slide"><img src="images/pf01_slide.jpg" alt=""></div>-->
+					  </div>
+
+					  <a href="#" class="close"><img src="images/close.png" alt=""></a>
+			  </div>  
+      </div>
+      
+      
+      
+      <div class="box">
+      	<img src="image01jpg/03.jpg" target="_blank" alt="MOSH">
+        	<a href="#" class="over menu">
+            <p class="t1">MOSH</p>
+            <p class="t1">MOBILE DESIGN</p>
+            </a>
+
+			  <div class="pop p3">
+					  <div class="c3"></div>
+
+					  <div class="c3s">
+						 <!--  <a href="pf03/index.html" target="_blank" class="link"></a>-->
+						 <div class="slide"><img src="images/pf03_slide.jpg" alt=""></div>
+                         <div class="slide1"><img src="images/pf03_slide1.png" alt=""></div>
+					  </div>
+ 
+					  <a href="#" class="close"><img src="images/closeblack.png" alt=""></a>
+			  </div>  
+		</div>
+      
+      
+
+
+
+
+      
+      <div class="box b4">
+        	<img src="image01jpg/04.jpg" alt="HOLLYS">
+
+        	<a href="#" class="over1 menu">
+				<p class="t1">HOLLYS</p>
+				<p class="t1">SITE DESIGN</p>
+            </a>
+
+			  <div class="pop p4">
+					  <div class="c4"></div>
+
+					  <div class="c4s">
+						  <a href="pf04/index.html" target="_blank" class="link"></a>
+						  <div class="slide"><img src="images/pf04_slide1.jpg" alt=""></div>
+					  </div>
+
+					  <a href="#" class="close"><img src="images/closeblack.png" alt=""></a>
+			  </div>  
+      </div>
+
+
+
+
+      
+      <div class="box">
+        	<img src="image01jpg/05.jpg" alt="ZARA">
+        	<a href="#" class="over menu">
+            <p class="t1">ZARA</p>
+            <p class="t1">MOBILE DESIGN</p>
+            </a>
+            
+            
+            <div class="pop p5">
+					  <div class="c5"></div>
+
+					  <div class="c5s">
+						 <!--  <a href="pf03/index.html" target="_blank" class="link"></a>-->
+						 <div class="slide"><img src="images/pf05_slide.jpg" alt=""></div>
+                         <div class="slide1"><img src="images/pf05_silde1.png" alt=""></div>
+					  </div>
+ 
+					  <a href="#" class="close"><img src="images/closeblack.png" alt=""></a>
+			  </div>  
+      </div>
+      
+      
+      
+      
+      <div class="box b6">
+      		<img src="image01jpg/06.jpg" alt="TYPODESIGN">
+        	<a href="#" class="over2 menu">
+            <p class="t1">TYPOGRAPHIC</p>
+            <p class="t1">TYPO DESIGN</p>
+            </a>
+            
+             <div class="pop p6">
+					  <div class="c6"></div>
+
+					  <div class="c6s">
+						 <!-- <a href="pf04/index.html" target="_blank" class="link"></a>
+						  <div class="slide"><img src="images/pf04_slide1.jpg" alt=""></div>-->
+					  </div>
+
+					  <a href="#" class="close"><img src="images/closeblack.png" alt=""></a>
+			  </div>  
+      </div>
+       
+       
+       
+       
+      <div class="box">
+            <img src="image01jpg/07.jpg" alt="FILA">
+        	<a href="#" class="over menu">
+            <p class="t1">FILA</p>
+            <p class="t1">Responsive design &amp; cording</p>
+            </a>
+            
+                      <div class="pop p7">
+					  <div class="c7"></div>
+
+					  <div class="c7s">
+						 <a href="pf07/index07.html" target="_blank" class="link"></a>
+						  <!--<div class="slide"><img src="images/pf04_slide1.jpg" alt=""></div>-->
+					  </div>
+
+					  <a href="#" class="close"><img src="images/closeblack.png" alt=""></a>
+			  </div>  
+      </div>
+      
+      
+      
+      
+      
+      <div class="box">
+      		<img src="image01jpg/08.jpg" alt="louis quatorze">
+        	<a href="cd01/index.html" target="_blank" class="over">
+            <p class="t1">LOUIS</br>QUATORZE</p>
+            <p class="t1">SITE CORDING</p>
+            </a>
+      </div>
+      
+      <div class="box">
+      		<img src="image01jpg/09.jpg" alt="miseenscene">
+        	<a href="cd02/index.html" target="_blank" class="over">
+            <p class="t1">MISEENSCENE</p>
+            <p class="t1">SITE CORDING</p>
+            </a>
+      </div>
+      
+      <div class="box b6">
+      		<img src="image01jpg/10.jpg" alt="HYUNDAI">
+        	<a href="cd03/index.html" target="_blank" class="over2">
+            <p class="t1">HYUNDAI</p>
+            <p class="t1">SITE CORDING</p>
+            </a>
+      </div>
+      
+      
+   </div> 
+ </div>
+    
+    
+    
+    
+    
+   <div id="contents3">  <!-- 컨텐츠 sub3 시작 -->
+	     <div class="inner clearfix">
+
+
+              <h2><img src="images/c3_title.jpg" alt="about"></h2>
+              
+              <div class="typo2"><img src="images/c3_bg.jpg" alt=""></div>
+              
+            <!--  <a href="#" class="a1"><img src="images/c3_insta.jpg" alt="instagram" /></a>-->
+              <p><img src="images/c3_tel.jpg" alt="tell" /></p>
+
+			  <a href="profile.html" target="_blank" class="more">profile</a>
+
+     </div>
+   </div>
+
+
+
+
+      
+      <div id="footer"> <!-- 푸터 시작 -->
+         <div class="inner">
+      
+              <p class="copyright">Copyright (c) 2020, SARA, All right reserved.</p>
+            
+         </div>
+      </div>
+
+
+</body>
+</html>

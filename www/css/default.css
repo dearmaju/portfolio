@@ -1,0 +1,72 @@
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+/* reset */
+html,body { width:100%; height:100%; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,button,input,legend { margin:0; padding:0; }
+body,h1,h2,h3,h4,input,button { font-size:12px; }
+ul,li,ol { list-style:none; }
+img,fieldset,iframe { border:0; }
+img { vertical-align:top; }
+table { border-collapse:collapse; }
+
+
+/* base */
+body { font:12px "나눔고딕","Nanum Gothic", "맑은 고딕"; }
+.skip_nav a { position:absolute; top:-9999px; font-size:0;}
+.skip_nav a:focus { position:absolute; left:0px; top:0px; z-index:1000; padding:5px; font-size:15px; background-color:#0099ff; }
+.blind { position:absolute; top:-9999px; font-size:0;}
+.clearfix:after { content:""; display:block; clear:both; }
+
+
+/* layout */
+#header { position:fixed; left:0px; top:0px; z-index:100; width:100%; background:rgba(255,255,153,0.8); }
+#header .inner { position:relative; margin:0 auto; width:90%; height:105px; border:1px dashed #aaa; }
+
+#visual { background:#fafaf2; }
+#visual .inner { position:relative; margin:0 auto; width:960px; height:610px; border:2px dashed #aaa; }
+
+#contents_main {  }
+#contents_main .inner { margin:0 auto; width:960px; /* height:480px; */ padding-bottom:50px; border:1px dashed #aaa; }
+
+#contents_sub1 { background:#fafaf2;  }
+#contents_sub1 .inner { margin:0 auto; width:960px; /* height:785px; */ padding-bottom:400px; border:2px dashed #aaa; }
+
+#contents_sub2 {  }
+#contents_sub2 .inner { margin:0 auto; width:960px; /* height:1300px; */ padding-bottom:50px; border:1px dashed #aaa; }
+
+#contents_sub3 {  background:#fafaf2;  }
+#contents_sub3 .inner { margin:0 auto; width:960px; height:1000px; padding-bottom:400px; border:2px dashed #aaa; }
+
+#footer { background:#333; }
+#footer .inner { position:relative; margin:0 auto; width:960px; height:110px; border:1px dashed #aaa; }
+
+
+/* header */
+#header h1 { position:absolute; left:10px; top:39px; }
+#header #gnb { position:absolute; right:10px; top:38px; }
+#header #gnb li { float:left; margin-left:37px; }
+
+
+/* visual */
+#visual .typo { position:absolute; left:147px; top:197px; width:628px; height:328px; }
+
+
+/* contents */
+#contents_main .section01 { float:left; width:300px; height:345px; margin:25px 20px 0 10px; }
+#contents_main .section02 { float:left; width:300px; height:345px; margin:25px 20px 0 0; }
+#contents_main .section03 { float:left; width:300px; height:345px; margin:25px  0 0; }
+
+#contents_sub1 h2 { padding-left:10px; padding-top:89px; }
+#contents_sub1 .info { margin-left:330px; margin-top:115px; width:620px; height:172px; background:url(../images/sub1_info.png) no-repeat; }
+
+#contents_sub2 h2 { transition:0.5s; position:relative; left:-1000px; top:0px; padding-left:10px; padding-top:89px; }
+#contents_sub2 .info { margin-top:115px; width:960px; }
+#contents_sub2 .info ul li { float:left; width:300px; height:415px; margin:0 10px 74px 10px; text-align:right; }
+
+#contents_sub3 h2 { padding-left:10px; padding-top:89px; }
+#contents_sub3 .info { margin-left:330px; margin-top:115px; width:620px; height:100px; background:url(../images/sub3_info.png) no-repeat; }
+
+
+/* footer */
+#footer .copyright { position:absolute; left:10px; top:55px; }
